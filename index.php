@@ -11,7 +11,9 @@ spl_autoload_register(function ($className) {
 require 'helpers.php';
 
 use Includes\Furniture\Table;
+use Includes\ChildClass;
 
 $table = new Table;
+$child = new ChildClass;
 
-customPrint($table->name);
+customPrint($table->name, $child->sayHello());
