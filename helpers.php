@@ -1,6 +1,8 @@
 <?php
 
-function customPrint(string $payload)
+function customPrint(string $payload, ...$additional)
 {
-    echo("{$payload}\n");
+    $additionalValues = count($additional) > 0 ? ', ' . implode(', ', $additional) : '';
+
+    echo("{$payload}{$additionalValues}\n");
 }
