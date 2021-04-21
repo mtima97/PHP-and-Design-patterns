@@ -16,4 +16,4 @@ use Includes\ChildClass;
 $table = new Table;
 $child = new ChildClass;
 
-customPrint($table->name, $child->sayHello());
+customPrint($table->name, $child->sayHello(), "Namespace is {$child->getNSpace()}");
