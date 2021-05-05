@@ -13,4 +13,15 @@ class ChildClass extends ParentClass
     {
         return __NAMESPACE__;
     }
+
+    function loopThroughGen(): void
+    {
+        $generator = xrange(0, 10000, 100);
+
+        while ($generator->valid()) {
+            customPrint("{$generator->key()}: {$generator->current()}");
+
+            $generator->next();
+        }
+    }
 }
