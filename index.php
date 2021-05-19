@@ -5,7 +5,7 @@ declare(strict_types=1);
 spl_autoload_register(function ($className) {
     $resolvedClassName = str_replace("\\", "/", $className);
 
-    include_once "{$resolvedClassName}.php";
+    include_once "$resolvedClassName.php";
 });
 
 require 'helpers.php';
