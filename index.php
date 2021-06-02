@@ -16,4 +16,10 @@ use Includes\ChildClass;
 $table = new Table;
 $child = new ChildClass;
 
-$child->loopThroughGen();
+//$child->loopThroughGen();
+
+$message = 'Hello world!';
+
+(function () use ($message) {
+    customPrint($message);
+})();
