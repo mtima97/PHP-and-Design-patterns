@@ -10,16 +10,13 @@ spl_autoload_register(function ($className) {
 
 require 'helpers.php';
 
-use Includes\Furniture\Table;
-use Includes\ChildClass;
+$age = 24;
 
-$table = new Table;
-$child = new ChildClass;
+function getName(callable $callback)
+{
+    $name = 'Timur';
 
-//$child->loopThroughGen();
+    $callback($name, $GLOBALS['age']);
+}
 
-$message = 'Hello world!';
-
-(function () use ($message) {
-    customPrint($message);
-})();
+getName(fn ($name, $age) => customPrint($name, $age));
