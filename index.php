@@ -19,4 +19,8 @@ function getName(callable $callback)
     $callback($name, $GLOBALS['age']);
 }
 
+$book = new \Includes\Book('Timur Myngbay', 'Be perfect');
+
+customPrint((new \Includes\BookAdapter($book))->getAuthorAndTitle());
+
 getName(fn ($name, $age) => customPrint($name, $age));
