@@ -2,25 +2,10 @@
 
 declare(strict_types=1);
 
-spl_autoload_register(function ($className) {
-    $resolvedClassName = str_replace("\\", "/", $className);
+require_once 'vendor/autoload.php';
 
-    include_once "$resolvedClassName.php";
-});
+use App\Examples\Patterns\Adapter\Book;
 
-require 'helpers.php';
+$book = new Book('Timur', 'Body');
 
-$age = 24;
-
-function getName(callable $callback)
-{
-    $name = 'Timur';
-
-    $callback($name, $GLOBALS['age']);
-}
-
-$book = new \Includes\Book('Timur Myngbay', 'Be perfect');
-
-customPrint((new \Includes\BookAdapter($book))->getAuthorAndTitle());
-
-getName(fn ($name, $age) => customPrint($name, $age));
+customPrint($book->getAuthor());

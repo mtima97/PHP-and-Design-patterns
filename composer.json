@@ -1,0 +1,20 @@
+{
+    "name": "vendor_name/phpspace",
+    "description": "description",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Timur Myngbay",
+            "email": "mtima97@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": ["./helpers.php"]
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 
-namespace Includes;
+namespace App\Examples\Patterns\Adapter;
 
 class Book
 {
