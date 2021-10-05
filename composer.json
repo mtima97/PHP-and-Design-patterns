@@ -16,5 +16,9 @@
             "App\\": "app/"
         },
         "files": ["./helpers.php"]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "minimum-stability": "dev"
     }
 }
