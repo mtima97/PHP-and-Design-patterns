@@ -2,9 +2,17 @@
 
 function customPrint(string $payload, ...$additional)
 {
-    $additionalValues = count($additional) > 0 ? ', ' . implode(', ', $additional) : '';
+    $mapped = array_map(function (mixed $value) {
+        if (is_array($value)) {
+            return implode(', ', $value);
+        }
 
-    echo("{$payload}{$additionalValues}\n");
+        return $value;
+    }, $additional);
+
+    $additionalValues = implode(', ', $mapped);
+
+    echo("{$payload}, {$additionalValues}\n");
 }
 
 function xrange(int $start, int $end, int $step = 1): Generator
